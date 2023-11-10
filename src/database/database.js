@@ -7,17 +7,20 @@ export class Database {
     #database = {}
 
     constructor() {
-        fs.readFile(databasePath, 'utf-8')
+        fs.readFile(databasePath, 'utf8')
         .then(data => {
 
             // if the file exists, we parse it and store it in memory
             this.#database = JSON.parse(data);
 
         })
-        .catch(() => {
+        .catch((err) => {
 
-            // calling persist here will create the file if it doesn't exist
-            this.#persist()
+            if (err) {
+                console.log('File does not exist')
+                // calling persist here will create the file if it doesn't exist
+                this.#persist()
+            }
 
         });
     }
@@ -64,7 +67,7 @@ export class Database {
     }
 
     update(table, id, newData) {
-           
+
         const row = this.#database[table].findIndex(row => {
             return row.id === id
         });
