@@ -1,7 +1,4 @@
-# ignite-nodejs-challenge-01
-This is a challenge made by Rocketseat to test our knowledge in nodeJS
-
-# Nome do Projeto  
+# ignite-nodejs-challenge-01 
 Primeiro desafio da rocketseat em sua trilha de nodeJS 2023
 # Instalação  
 Para instalar as dependências do projeto, execute o seguinte comando:
